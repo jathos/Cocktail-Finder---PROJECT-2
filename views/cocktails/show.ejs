@@ -9,10 +9,52 @@
 </head>
 
 <body>
-    <h1>Check out what I sent here:</h1>
-    <p>
-        <%= JSON.stringify(cocktailData) %>
-    </p>
-</body>
+    <div>
+        <a href="/cocktails/a">A</a>
+        <a href="/cocktails/b">B</a>
+        <a href="/cocktails/c">C</a>
+        <a href="/cocktails/d">D</a>
+        <a href="/cocktails/e">E</a>
+        <a href="/cocktails/f">F</a>
+        <a href="/cocktails/g">G</a>
+        <a href="/cocktails/h">H</a>
+        <a href="/cocktails/i">I</a>
+        <a href="/cocktails/j">J</a>
+        <a href="/cocktails/k">K</a>
+        <a href="/cocktails/l">L</a>
+        <a href="/cocktails/m">M</a>
+        <a href="/cocktails/n">N</a>
+        <a href="/cocktails/o">O</a>
+        <a href="/cocktails/p">P</a>
+        <a href="/cocktails/q">Q</a>
+        <a href="/cocktails/r">R</a>
+        <a href="/cocktails/s">S</a>
+        <a href="/cocktails/t">T</a>
+        <a href="/cocktails/u">U</a>
+        <a href="/cocktails/v">V</a>
+        <a href="/cocktails/w">W</a>
+        <a href="/cocktails/x">X</a>
+        <a href="/cocktails/y">Y</a>
+        <a href="/cocktails/z">Z</a>
+    </div>
+    <h1>RESULTS</h1>
+    <% if (cocktailData.drinks !==null) { %>
+        <% cocktailData.drinks.forEach(function (ele, idx) { %>
+            <img src="<%= cocktailData.drinks[idx].strDrinkThumb %>">
+            <section>
+                <h3>Name: <%= cocktailData.drinks[idx].strDrink %>
+                </h3>
+                <p>
+                    <%= cocktailData.drinks[idx].strAlcoholic %>
+                        <%= cocktailData.drinks[idx].strCategory.toLowerCase() %>
+                            featuring <%= cocktailData.drinks[idx].strIngredient1 %>, best enjoyed in a <%=
+                                    cocktailData.drinks[idx].strGlass %>.
+                </p>
+            </section>
+            <% }); %>
+                <% } else { %>
+                    <h1>Select a letter above</h1>
+                    <% }; %>
+                        < </body>
 
 </html>
