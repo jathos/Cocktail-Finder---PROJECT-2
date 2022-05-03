@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div class="sidenav">
+        <a href="/">Search</a>
+    </div>
     <div>
         <a href="/cocktails/a">A</a>
         <a href="/cocktails/b">B</a>
@@ -43,7 +46,10 @@
         <% cocktailData.drinks.forEach(function (ele, idx) { %>
             <img src="<%= cocktailData.drinks[idx].strDrinkThumb %>">
             <section>
-                <h3>Name: <%= cocktailData.drinks[idx].strDrink %>
+                <h3>
+                    <a href="/cocktails/<%=cocktailData.drinks[idx].idDrink%>">
+                        <%= cocktailData.drinks[idx].strDrink %>
+                    </a>
                 </h3>
             </section>
             <% }); %>

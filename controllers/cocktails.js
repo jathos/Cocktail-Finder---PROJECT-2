@@ -9,6 +9,7 @@ const rootURL = 'https://www.thecocktaildb.com/api/json/v1/';
 module.exports = {
     showAll,
     showSearch,
+    // showOne,
     showA,
     showB,
     showC,
@@ -67,6 +68,10 @@ function showSearch(req, res) {
             });
     };
 };
+
+function showOne(req, res) {
+
+}
 
 function showA(req, res) {
     fetch(`${rootURL}${token}/search.php?f=a`)
@@ -149,7 +154,7 @@ function showJ(req, res) {
 };
 
 function showK(req, res) {
-    fetch(`${rootURL}${token}/search.php?f=a`)
+    fetch(`${rootURL}${token}/search.php?f=k`)
         .then(res => res.json())
         .then(cocktailData => {
             res.render('cocktails/show', { cocktailData });
