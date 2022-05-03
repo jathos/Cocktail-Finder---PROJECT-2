@@ -51,12 +51,18 @@ function showSearch(req, res) {
         fetch(`${rootURL}${token}/search.php?s=${searchData}`)
             .then(res => res.json())
             .then(cocktailData => {
-                res.render('cocktails/show', { cocktailData });
+                res.render('cocktails/show', { cocktailData, searchData });
             });
-    } else if (req.query.criteria == "spirit") {
+    } else {
         fetch(`${rootURL}${token}/filter.php?i=${searchData}`)
             .then(res => res.json())
             .then(cocktailData => {
+                res.render('cocktails/search', { cocktailData, searchData });
+            })
+            .catch(err => {
+                let cocktailData = {
+                    drinks: null
+                };
                 res.render('cocktails/search', { cocktailData, searchData });
             });
     };
