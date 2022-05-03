@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/">Search</a>
+    </div>
+    <img src="<%= cocktailData.drinks[0].strDrinkThumb %>">
+    <h1>
+        <%= cocktailData.drinks[0].strDrink %>
+    </h1>
+    <p>
+        <%= cocktailData.drinks[0].strAlcoholic %>
+            <%= cocktailData.drinks[0].strCategory.toLowerCase() %>
+                featuring <%= cocktailData.drinks[0].strIngredient1 %>, best enjoyed in a <%=
+                        cocktailData.drinks[0].strGlass %>.
+    </p>
+    <section>
+        <h2>Ingredients</h2>
+        <hr>
+        <% let ingredients=[cocktailData.drinks[0].strIngredient1, cocktailData.drinks[0].strIngredient2,
+            cocktailData.drinks[0].strIngredient3, cocktailData.drinks[0].strIngredient4,
+            cocktailData.drinks[0].strIngredient5, cocktailData.drinks[0].strIngredient6,
+            cocktailData.drinks[0].strIngredient7, cocktailData.drinks[0].strIngredient8,
+            cocktailData.drinks[0].strIngredient9, cocktailData.drinks[0].strIngredient10,
+            cocktailData.drinks[0].strIngredient11, cocktailData.drinks[0].strIngredient12,
+            cocktailData.drinks[0].strIngredient13, cocktailData.drinks[0].strIngredient14,
+            cocktailData.drinks[0].strIngredient15]; %>
+            <% let measurements=[cocktailData.drinks[0].strMeasure1, cocktailData.drinks[0].strMeasure2,
+                cocktailData.drinks[0].strMeasure3, cocktailData.drinks[0].strMeasure4,
+                cocktailData.drinks[0].strMeasure5, cocktailData.drinks[0].strMeasure6,
+                cocktailData.drinks[0].strMeasure7, cocktailData.drinks[0].strMeasure8,
+                cocktailData.drinks[0].strMeasure9, cocktailData.drinks[0].strMeasure10,
+                cocktailData.drinks[0].strMeasure11, cocktailData.drinks[0].strMeasure12,
+                cocktailData.drinks[0].strMeasure13, cocktailData.drinks[0].strMeasure14,
+                cocktailData.drinks[0].strMeasure15] %>
+                <% ingredients.forEach(function(ele, idx) { %>
+                    <% if (ele !==null && ele !=="" ) { %>
+                        <h4>
+                            <%= measurements[idx] %>
+                                of
+                                <%= ele %>
+                                    <h4>
+                                        <% } %>
+                                            <% }) %>
+    </section>
+    <section>
+        <h2>Recipe</h2>
+        <hr>
+        <p>
+            <%= cocktailData.drinks[0].strInstructions %>
+        </p>
+    </section>
+
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 const { search } = require('../routes');
 
-//const Cocktail = STILL NEED A PATH TO THE MODEL HERE
+// const Cocktail = STILL NEED A PATH TO THE MODEL HERE
 const fetch = (...args) =>
     import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const token = process.env.COCKTAILDB_TOKEN;
@@ -9,7 +9,7 @@ const rootURL = 'https://www.thecocktaildb.com/api/json/v1/';
 module.exports = {
     showAll,
     showSearch,
-    // showOne,
+    showOne,
     showA,
     showB,
     showC,
@@ -70,8 +70,12 @@ function showSearch(req, res) {
 };
 
 function showOne(req, res) {
-
-}
+    fetch(`${rootURL}${token}/lookup.php?i=${req.params.id}`)
+        .then(res => res.json())
+        .then(cocktailData => {
+            res.render('cocktails/details', { cocktailData });
+        })
+};
 
 function showA(req, res) {
     fetch(`${rootURL}${token}/search.php?f=a`)
@@ -234,10 +238,11 @@ function showT(req, res) {
 };
 
 function showU(req, res) {
+    let searchData = "U"
     fetch(`${rootURL}${token}/search.php?f=u`)
         .then(res => res.json())
         .then(cocktailData => {
-            res.render('cocktails/show', { cocktailData });
+            res.render('cocktails/show', { cocktailData, searchData });
         });
 };
 
@@ -258,10 +263,11 @@ function showW(req, res) {
 };
 
 function showX(req, res) {
+    let searchData = "X"
     fetch(`${rootURL}${token}/search.php?f=x`)
         .then(res => res.json())
         .then(cocktailData => {
-            res.render('cocktails/show', { cocktailData });
+            res.render('cocktails/show', { cocktailData, searchData });
         });
 };
 
