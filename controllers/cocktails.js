@@ -1,3 +1,5 @@
+const { search } = require('../routes');
+
 //const Cocktail = STILL NEED A PATH TO THE MODEL HERE
 const fetch = (...args) =>
     import('node-fetch').then(({ default: fetch }) => fetch(...args));
@@ -44,12 +46,18 @@ function showAll(req, res) {
 };
 
 function showSearch(req, res) {
-    console.log((req.query.criteria == "name"));
+    let searchData = req.query.search;
     if (req.query.criteria == "name") {
-        fetch(`${rootURL}${token}/search.php?s=${req.query.search}`)
+        fetch(`${rootURL}${token}/search.php?s=${searchData}`)
             .then(res => res.json())
             .then(cocktailData => {
                 res.render('cocktails/show', { cocktailData });
+            });
+    } else if (req.query.criteria == "spirit") {
+        fetch(`${rootURL}${token}/filter.php?i=${searchData}`)
+            .then(res => res.json())
+            .then(cocktailData => {
+                res.render('cocktails/search', { cocktailData, searchData });
             });
     };
 };
