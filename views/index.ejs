@@ -5,10 +5,17 @@
   <title>Find Cocktails</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
+<nav>
+  <% if (user) { %>
+    <a href="/logout">Log out</a>
+    <% } else { %>
+      <a href="/auth/google">Log in with <img src="https://i.imgur.com/DYpv1x5.png"></a>
+      <% } %>
+</nav>
 
 <body>
   <h1>FIND COCKTAILS</h1>
-  <form action="/cocktails/search" method="GET">
+  <form action=" /cocktails/search" method="GET">
     <input type="search" name="search" placeholder="Select a criteria below to start your search" required>
     <h5>Select your search critera:</h5>
     <select name="criteria" required>

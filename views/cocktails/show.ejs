@@ -10,7 +10,12 @@
 
 <body>
     <div class="sidenav">
-        <a href="/">Search</a>
+        <% if (user) { %>
+            <a href="/logout">Log out</a>
+            <% } else { %>
+                <a href="/auth/google">Log in with <img src="https://i.imgur.com/DYpv1x5.png"></a>
+                <% } %>
+                    <a href="/">Search</a>
     </div>
     <div>
         <a href="/cocktails/search/a">A</a>

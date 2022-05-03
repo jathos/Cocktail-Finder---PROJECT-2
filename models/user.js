@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     name: String,
-    googleID: {
+    googleId: {
         type: String,
         required: true
     },
