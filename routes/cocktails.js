@@ -4,6 +4,7 @@ const router = express.Router();
 const cocktailsCtrl = require('../controllers/cocktails');
 
 router.get('/', cocktailsCtrl.showAll);
+router.get('/search', cocktailsCtrl.showSearch);
 
 router.get('/a', cocktailsCtrl.showA);
 router.get('/b', cocktailsCtrl.showB);

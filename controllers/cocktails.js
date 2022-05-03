@@ -6,6 +6,7 @@ const rootURL = 'https://www.thecocktaildb.com/api/json/v1/';
 
 module.exports = {
     showAll,
+    showSearch,
     showA,
     showB,
     showC,
@@ -40,6 +41,17 @@ function showAll(req, res) {
         .then(cocktailData => {
             res.render('cocktails/show', { cocktailData });
         });
+};
+
+function showSearch(req, res) {
+    console.log((req.query.criteria == "name"));
+    if (req.query.criteria == "name") {
+        fetch(`${rootURL}${token}/search.php?s=${req.query.search}`)
+            .then(res => res.json())
+            .then(cocktailData => {
+                res.render('cocktails/show', { cocktailData });
+            });
+    };
 };
 
 function showA(req, res) {

@@ -2,16 +2,25 @@
 <html>
 
 <head>
-  <title>Party Time</title>
+  <title>Find Cocktails</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
   <h1>FIND COCKTAILS</h1>
-  <form action="TO BE DETERMINED!!" method="GET">
-    <input type="search" name="TO BE DETERMINED!!" placeholder="Cocktail Name, Spirit, Ingredient, or Glass Type">
+  <form action="/cocktails/search" method="GET">
+    <input type="search" name="search" placeholder="Select a criteria below to start your search" required>
+    <h5>Select your search critera:</h5>
+    <select name="criteria" required>
+      <option value="">-</option>
+      <option value="name">Cocktail Name</option>
+      <option value="spirit">Spirit Type</option>
+      <option value="glass">Glass Type</option>
+      <option value="ingredient">Ingredient</option>
+    </select>
+    <input type="submit" value="Search">
   </form>
-  <a href="/cocktails">Browse All Cocktails</a>
+  <a href="/cocktails">Browse By Letter</a>
 </body>
 
 </html>
