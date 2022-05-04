@@ -63,7 +63,19 @@
             <%= cocktailData.drinks[0].strInstructions %>
         </p>
     </section>
-
+    <h4>Comments</h4>
+    <hr>
+    <% if (user) { %>
+        <h5>Post a new comment:</h5>
+        <form action="/comments/<%= cocktailData.drinks[0].idDrink %>" method="POST">
+            <textarea name="text"></textarea>
+            <input type="submit" value="Post">
+        </form>
+        <% } else { %>
+            <div>
+                <p></p><a href="/auth/google">Log in</a> to post a comment.</p>
+            </div>
+            <% } %>
 </body>
 
 </html>

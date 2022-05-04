@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    text: String
+    text: { type: String, required: true },
+    cocktailId: String,
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 });
