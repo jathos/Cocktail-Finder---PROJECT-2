@@ -70,9 +70,10 @@
             <table>
                 <thead>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,6 +87,13 @@
                             </td>
                             <td>
                                 <%= ele.text %>
+                            </td>
+                            <td>
+                                <% if (user && user._id.equals(ele.user)) { %>
+                                    <form action="/comments/<%= ele._id %>" method="DELETE">
+                                        <button type="submit">x</button>
+                                    </form>
+                                    <% } %>
                             </td>
                         </tr>
                         <% }) %>
