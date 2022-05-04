@@ -66,16 +66,44 @@
     <h4>Comments</h4>
     <hr>
     <% if (user) { %>
-        <h5>Post a new comment:</h5>
-        <form action="/comments/<%= cocktailData.drinks[0].idDrink %>" method="POST">
-            <textarea name="text"></textarea>
-            <input type="submit" value="Post">
-        </form>
-        <% } else { %>
-            <div>
-                <p></p><a href="/auth/google">Log in</a> to post a comment.</p>
-            </div>
-            <% } %>
+        <% if (searchResults.length) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% searchResults.forEach(function(ele) { %>
+                        <tr>
+                            <td><img src='<%= ele.userAvatar %>'>
+                                <%= ele.userName %>
+                            </td>
+                            <td>
+                                <%= ele.createdAt.toLocaleDateString() %>
+                            </td>
+                            <td>
+                                <%= ele.text %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <p>No comments posted yet</p>
+                <% } %>
+                    <h5>Post a new comment:</h5>
+                    <form action="/comments/<%= cocktailData.drinks[0].idDrink %>" method="POST">
+                        <textarea name="text"></textarea>
+                        <input type="submit" value="Post">
+                    </form>
+                    <% } else { %>
+                        <div>
+                            <p></p><a href="/auth/google">Log in</a> to post a comment.</p>
+                        </div>
+                        <% } %>
 </body>
 
 </html>
