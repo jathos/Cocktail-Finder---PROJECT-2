@@ -1,4 +1,6 @@
 const { search } = require('../routes');
+const Comment = require('../models/comment');
+const User = require('../models/user');
 
 // const Cocktail = STILL NEED A PATH TO THE MODEL HERE
 const fetch = (...args) =>
@@ -70,11 +72,19 @@ function showSearch(req, res) {
 };
 
 function showOne(req, res) {
-    fetch(`${rootURL}${token}/lookup.php?i=${req.params.id}`)
-        .then(res => res.json())
-        .then(cocktailData => {
-            res.render('cocktails/details', { cocktailData });
+    let searchResults
+    Comment.find({ cocktailId: `${req.params.id}` })
+        .then(function (doc) {
+            searchResults = doc;
+            return searchResults
         })
+        .then(function () {
+            fetch(`${rootURL}${token}/lookup.php?i=${req.params.id}`)
+                .then(res => res.json())
+                .then(cocktailData => {
+                    res.render('cocktails/details', { cocktailData, searchResults });
+                })
+        });
 };
 
 function showA(req, res) {
