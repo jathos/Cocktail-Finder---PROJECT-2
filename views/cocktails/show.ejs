@@ -21,7 +21,7 @@
                         src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log
                     in</a>
                 <% } %>
-                    <a href="/">Search</a>
+                    <a href="/">Home</a>
     </div>
     <div class="letternav">
         <p> ~ </p>
@@ -74,7 +74,7 @@
             </div>
             <% }); %>
                 <% } else { %>
-                    <h2>We can't find anything named "<%= searchData %>", old chap.</h2>
+                    <p class="errorsearch">We can't find anything named "<%= searchData %>", old chap.</p>
                     <a href="/">Search Again</a>
                     <% }; %>
 </body>

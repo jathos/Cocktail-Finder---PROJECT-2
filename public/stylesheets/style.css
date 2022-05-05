@@ -111,8 +111,8 @@ select {
 .loginpicshowpage {
   height: 75px;
   width: 75px;
-  background-color: white;
   border-radius: 50%;
+  opacity: .8;
 }
 
 .homepageundersearch {
@@ -181,4 +181,11 @@ select {
   position: relative;
   top: .7vh;
   font-family: 'Playfair Display', serif;
+}
+
+.errorsearch {
+  margin-left: 225px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3vw;
 }
