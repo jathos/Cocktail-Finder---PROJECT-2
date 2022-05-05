@@ -12,27 +12,31 @@
   <% if (user) { %>
     <a href="/logout">Log out</a>
     <% } else { %>
-      <a href="/auth/google">Log in with <img src="https://i.imgur.com/DYpv1x5.png"></a>
+
+      <a href="/auth/google"><img class="loginpic" src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log
+        in</a>
       <% } %>
 </nav>
 
 <body class="homepage">
-  <h1 class="homepageheading">Find A Cocktail</h1>
+  <p class="homepageheading">Find A Cocktail</p>
   <form style="text-align:center" action=" /cocktails/search" method="GET">
     <input class="searchbar" type="search" name="search" placeholder="Select a criteria below to start your search"
       required>
     <input id="searchbutton" type="submit" value="Search">
     <br>
-    <label style="color:white;font-size:12pt;font-family: 'Playfair Display', serif;">Select your search
-      critera:</label>
-    <select name="criteria" required>
-      <option value="">-</option>
-      <option value="name">Cocktail Name</option>
-      <option value="ingredient">Ingredient</option>
-    </select>
+    <div class="homepageundersearch">
+      <label style="color:white;font-size:14pt;font-family: 'Playfair Display', serif">Search
+        critera:</label>
+      <select id="selectbox" name="criteria" required>
+        <option value="">-</option>
+        <option value="name">Cocktail Name</option>
+        <option value="ingredient">Ingredient</option>
+      </select>
 
   </form>
   <a class="browselink" href="/cocktails">Browse By Letter</a>
+  </div>
 </body>
 
 </html>
