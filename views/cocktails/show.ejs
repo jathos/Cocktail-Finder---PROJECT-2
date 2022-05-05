@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="showpage">
     <div class="sidenav">
         <% if (user) { %>
             <a href="/logout">Log out</a>
@@ -46,23 +46,25 @@
         <a href="/cocktails/search/y">Y</a>
         <a href="/cocktails/search/z">Z</a>
     </div>
-    <h1>RESULTS</h1>
+    <h1 style="color:white">RESULTS</h1>
     <% if (cocktailData.drinks !==null) { %>
         <% cocktailData.drinks.forEach(function (ele, idx) { %>
-            <img src="<%= cocktailData.drinks[idx].strDrinkThumb %>">
-            <section>
-                <h3>
+            <div class="showcontainer">
+                <img class="thumbnail" src="<%= cocktailData.drinks[idx].strDrinkThumb %>">
+
+                <h3 class="gridtitle">
                     <a href="/cocktails/<%=cocktailData.drinks[idx].idDrink%>">
                         <%= cocktailData.drinks[idx].strDrink %>
                     </a>
                 </h3>
-                <p>
+                <p class="griddescription" style="color: white">
                     <%= cocktailData.drinks[idx].strAlcoholic %>
                         <%= cocktailData.drinks[idx].strCategory.toLowerCase() %>
                             featuring <%= cocktailData.drinks[idx].strIngredient1 %>, best enjoyed in a <%=
                                     cocktailData.drinks[idx].strGlass %>.
                 </p>
-            </section>
+
+            </div>
             <% }); %>
                 <% } else { %>
                     <h2>We can't find anything named "<%= searchData %>", old chap.</h2>
