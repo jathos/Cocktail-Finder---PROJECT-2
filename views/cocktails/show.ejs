@@ -13,11 +13,13 @@
 </head>
 
 <body class="showpage">
-    <div class="sidenav">
+    <div id="mySidenav" class="sidenav">
         <% if (user) { %>
             <a href="/logout">Log out</a>
             <% } else { %>
-                <a href="/auth/google">Log in with <img src="https://i.imgur.com/DYpv1x5.png"></a>
+                <a href="/auth/google"><img class="loginpicshowpage"
+                        src="https://cdn-icons-png.flaticon.com/512/149/149995.png">Log
+                    in</a>
                 <% } %>
                     <a href="/">Search</a>
     </div>
