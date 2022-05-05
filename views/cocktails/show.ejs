@@ -13,12 +13,12 @@
 </head>
 
 <body class="showpage">
-    <div id="mySidenav" class="sidenav">
+    <div class="sidenav">
         <% if (user) { %>
             <a href="/logout">Log out</a>
             <% } else { %>
                 <a href="/auth/google"><img class="loginpicshowpage"
-                        src="https://cdn-icons-png.flaticon.com/512/149/149995.png">Log
+                        src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log
                     in</a>
                 <% } %>
                     <a href="/">Search</a>
@@ -53,9 +53,7 @@
         <a href="/cocktails/search/z">Z</a>
         <p> ~ </p>
     </div>
-    <p style="color:white;margin-bottom: 0;font-size: 20pt;font-family: 'Playfair Display', serif;font-style: italic">
-        Your Server
-        Suggests...</p>
+    <p class="showheader">Your Server Suggests...</p>
     <hr>
     <% if (cocktailData.drinks !==null) { %>
         <% cocktailData.drinks.forEach(function (ele, idx) { %>
