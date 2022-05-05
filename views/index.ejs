@@ -4,6 +4,9 @@
 <head>
   <title>Find Cocktails</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <nav>
   <% if (user) { %>
@@ -13,19 +16,23 @@
       <% } %>
 </nav>
 
-<body>
-  <h1>FIND COCKTAILS</h1>
-  <form action=" /cocktails/search" method="GET">
-    <input type="search" name="search" placeholder="Select a criteria below to start your search" required>
-    <h5>Select your search critera:</h5>
+<body class="homepage">
+  <h1 class="homepageheading">Find A Cocktail</h1>
+  <form style="text-align:center" action=" /cocktails/search" method="GET">
+    <input class="searchbar" type="search" name="search" placeholder="Select a criteria below to start your search"
+      required>
+    <input id="searchbutton" type="submit" value="Search">
+    <br>
+    <label style="color:white;font-size:12pt;font-family: 'Playfair Display', serif;">Select your search
+      critera:</label>
     <select name="criteria" required>
       <option value="">-</option>
       <option value="name">Cocktail Name</option>
       <option value="ingredient">Ingredient</option>
     </select>
-    <input type="submit" value="Search">
+
   </form>
-  <a href="/cocktails">Browse By Letter</a>
+  <a class="browselink" href="/cocktails">Browse By Letter</a>
 </body>
 
 </html>

@@ -6,3 +6,48 @@ body {
 a {
   color: #00B7FF;
 }
+
+.homepage {
+  background-image: url(../images/pexels-alem-sánchez-613037-min.jpg);
+  background-size: cover;
+}
+
+.searchbar {
+  font-family: 'Playfair Display', serif;
+  height: 40px;
+  width: 50%;
+  font-size: 15pt;
+}
+
+.homepageheading {
+  text-align: center;
+  margin-top: 100px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  letter-spacing: 5px;
+  font-size: 40pt;
+}
+
+nav {
+  text-align: right;
+}
+
+select {
+  text-align-last: center;
+  margin-top: 20px;
+  font-size: 12pt;
+}
+
+#searchbutton {
+  font-family: 'Playfair Display', serif;
+  height: 40px;
+
+  position: relative;
+  bottom: 3px;
+}
+
+.browselink {
+  display: block;
+  text-align: right;
+}
