@@ -261,3 +261,12 @@ table {
 .activebutton:hover {
   background-color: darkgrey;
 }
+
+.commentpic {
+  border-radius: 60%;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  height: 50px;
+  width: 50px;
+}

@@ -91,16 +91,18 @@
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <% searchResults.forEach(function(ele) { %>
                         <tr>
-                            <td><img src='<%= ele.userAvatar %>'>
-                                <%= ele.userName %>
+                            <td><img class="commentpic" src='<%= ele.userAvatar %>'> </td>
+                            <td>
+                                <%= ele.userName %> -
                             </td>
                             <td>
-                                <%= ele.createdAt.toLocaleDateString() %>
+                                <%= ele.createdAt.toLocaleDateString() %> -
                             </td>
                             <td>
                                 <%= ele.text %>
@@ -108,7 +110,10 @@
                             <td>
                                 <% if (user && user._id.equals(ele.user)) { %>
                                     <form action="/comments/<%= ele._id %>?_method=DELETE" method="POST">
-                                        <button type="submit">x</button>
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                    <form action="/comments/<%= ele._id %>?_method=PUT" method="POST">
+                                        <button type="submit">- Edit -</button>
                                     </form>
                                     <% } %>
                             </td>
