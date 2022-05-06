@@ -255,4 +255,9 @@ table {
   border-color: white;
   border-width: 1px;
   border-style: solid;
+  transition: background-color 1s;
+}
+
+.activebutton:hover {
+  background-color: darkgrey;
 }
