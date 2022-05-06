@@ -32,6 +32,7 @@ Enjoy! (responsibly)
 - Passport
 - DotEnv
 - VS Code
+- Heroku
 - Github
 - [whimsical.com](https://whimsical.com) (for project planning)
 - [trello.com](https://trello.com) (for project planning)
@@ -45,6 +46,7 @@ Enjoy! (responsibly)
 - Alphabetize results list
 - Provide a list of available ingredients, to aid user search
 - Links to needed materials for creating your own at-home bar
+- Special Thanks Fine Print
 
 ## FROM PLANNING TO PRODUCTION
 ---
