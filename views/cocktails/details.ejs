@@ -9,27 +9,28 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="showpage">
     <div class="sidenav">
         <% if (user) { %>
             <a href="/logout">Log out</a>
             <% } else { %>
-                <a href="/auth/google">Log in with <img src="https://i.imgur.com/DYpv1x5.png"></a>
+                <a href="/auth/google"><img class="loginpicshowpage"
+                        src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log In</a>
                 <% } %>
                     <a href="/">Search</a>
     </div>
-    <img src="<%= cocktailData.drinks[0].strDrinkThumb %>">
-    <h1>
+    <img class="detailspic" src="<%= cocktailData.drinks[0].strDrinkThumb %>">
+    <h1 class="detailtitle" style="text-decoration:underline">
         <%= cocktailData.drinks[0].strDrink %>
     </h1>
-    <p>
+    <p class="detailtitle">
         <%= cocktailData.drinks[0].strAlcoholic %>
             <%= cocktailData.drinks[0].strCategory.toLowerCase() %>
                 featuring <%= cocktailData.drinks[0].strIngredient1 %>, best enjoyed in a <%=
                         cocktailData.drinks[0].strGlass %>.
     </p>
     <section>
-        <h2>Ingredients</h2>
+        <h2 class="detailsubtitle">Ingredients</h2>
         <hr>
         <% let ingredients=[cocktailData.drinks[0].strIngredient1, cocktailData.drinks[0].strIngredient2,
             cocktailData.drinks[0].strIngredient3, cocktailData.drinks[0].strIngredient4,
@@ -49,7 +50,7 @@
                 cocktailData.drinks[0].strMeasure15] %>
                 <% ingredients.forEach(function(ele, idx) { %>
                     <% if (ele !==null && ele !=="" ) { %>
-                        <h4>
+                        <h4 class="detailsubtitle">
                             <%= measurements[idx] %>
                                 of
                                 <%= ele %>
@@ -58,13 +59,13 @@
                                             <% }) %>
     </section>
     <section>
-        <h2>Recipe</h2>
+        <h2 class="detailsubtitle">Recipe</h2>
         <hr>
-        <p>
+        <p class="detailsubtitle">
             <%= cocktailData.drinks[0].strInstructions %>
         </p>
     </section>
-    <h4>Comments</h4>
+    <h4 class="detailsubtitle">Comments</h4>
     <hr>
     <% if (user) { %>
         <% if (searchResults.length) { %>

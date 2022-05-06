@@ -20,7 +20,6 @@ body {
   font-size: 8vmin;
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  background-color: red;
   justify-content: center;
   align-items: center;
   background-image: url(../images/results-background.jpg);
@@ -36,15 +35,23 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0px 0px 0px 10px;
+  padding: 20px 0px 0px 10px;
+  border-right-style: solid;
+  border-right-color: white;
+  border-right-width: 1px;
 }
 
 .sidenav a {
   display: block;
   font-size: 25px;
-  padding: 20px 8px 20px 8px;
+  padding: 20px 8px 20px 20px;
   color: lightslategray;
   font-family: 'Playfair Display', serif;
+  transition: color 1s;
+}
+
+.sidenav a:hover {
+  color: white;
 }
 
 a,
@@ -188,4 +195,22 @@ select {
   color: white;
   font-family: 'Playfair Display', serif;
   font-size: 1.3vw;
+}
+
+.detailspic {
+  display: block;
+  margin: 0 auto;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}
+
+.detailtitle {
+  text-align: center;
+  color: white;
+}
+
+.detailsubtitle {
+  margin-left: 225px;
+  color: white;
 }
