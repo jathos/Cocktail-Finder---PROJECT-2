@@ -26,11 +26,13 @@
         <h1 class="detailtitle" style="text-decoration:underline">
             <%= cocktailData.drinks[0].strDrink %>
         </h1>
-        <% if (user) { %>
-            <form action="/cocktails/<%= cocktailData.drinks[0].idDrink %>" method="POST">
-                <button type="submit">Add to Favorites</button>
-            </form>
-            <% } %>
+        <% if (user && user.favoriteIds.includes(cocktailData.drinks[0].idDrink)) { %>
+            <button type="button" disabled>Add to Favorites</button>
+            <% } else if (user) {%>
+                <form action="/cocktails/<%= cocktailData.drinks[0].idDrink %>" method="POST">
+                    <button type="submit">Add to Favorites</button>
+                </form>
+                <% } %>
     </div>
     <p class="detailtitle">
         <%= cocktailData.drinks[0].strAlcoholic %>
