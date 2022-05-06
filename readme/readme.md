@@ -10,6 +10,7 @@ Enjoy! (responsibly)
 ## GETTING STARTED
 ---
 
+[CLICK](https://cocktail-finder-by-jb.herokuapp.com/) to use the Cocktail Finder by J.B.
 
 ## SCREENSHOTS
 ---
@@ -34,6 +35,7 @@ Enjoy! (responsibly)
 - VS Code
 - Heroku
 - Github
+- [pexels.com](https://pexels.com) (for stock images)
 - [whimsical.com](https://whimsical.com) (for project planning)
 - [trello.com](https://trello.com) (for project planning)
 
