@@ -82,48 +82,49 @@
     </section>
     <h2 class="detailsubtitle">Comments</h2>
     <hr>
-    <% if (user) { %>
-        <% if (searchResults.length) { %>
-            <table>
-                <thead>
+
+    <% if (searchResults.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% searchResults.forEach(function(ele) { %>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <td><img class="commentpic" src='<%= ele.userAvatar %>'> </td>
+                        <td>
+                            <%= ele.userName %> -
+                        </td>
+                        <td>
+                            <%= ele.createdAt.toLocaleDateString() %> -
+                        </td>
+                        <td>
+                            <%= ele.text %>
+                        </td>
+                        <td>
+                            <% if (user && user._id.equals(ele.user)) { %>
+                                <form action="/comments/<%= ele._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">Delete</button>
+                                </form>
+                                <form action="/comments/<%= ele._id %>" method="GET">
+                                    <button type="submit">- Edit -</button>
+                                </form>
+                                <% } %>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <% searchResults.forEach(function(ele) { %>
-                        <tr>
-                            <td><img class="commentpic" src='<%= ele.userAvatar %>'> </td>
-                            <td>
-                                <%= ele.userName %> -
-                            </td>
-                            <td>
-                                <%= ele.createdAt.toLocaleDateString() %> -
-                            </td>
-                            <td>
-                                <%= ele.text %>
-                            </td>
-                            <td>
-                                <% if (user && user._id.equals(ele.user)) { %>
-                                    <form action="/comments/<%= ele._id %>?_method=DELETE" method="POST">
-                                        <button type="submit">Delete</button>
-                                    </form>
-                                    <form action="/comments/<%= ele._id %>" method="GET">
-                                        <button type="submit">- Edit -</button>
-                                    </form>
-                                    <% } %>
-                            </td>
-                        </tr>
-                        <% }) %>
-                </tbody>
-            </table>
-            <% } else { %>
-                <p class="detailsubtitle">No comments posted yet</p>
-                <% } %>
+                    <% }) %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <p class="detailsubtitle">No comments posted yet</p>
+            <% } %>
+                <% if (user) { %>
                     <h5 class="detailsubtitle">Post a new comment:</h5>
                     <form action="/comments/<%= cocktailData.drinks[0].idDrink %>" method="POST">
                         <textarea class="marginleft" name="text"></textarea>
