@@ -22,7 +22,8 @@ const userSchema = new Schema({
     },
     email: String,
     avatar: String,
-    favorites: [favoriteSchema]
+    favorites: [favoriteSchema],
+    favoriteIds: Array
 }, {
     timestamps: true
 });

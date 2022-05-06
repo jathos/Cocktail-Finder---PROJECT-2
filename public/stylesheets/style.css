@@ -205,6 +205,11 @@ select {
   border-width: 1px;
 }
 
+.detailstitle {
+  display: flex;
+  justify-content: center;
+}
+
 .detailtitle {
   text-align: center;
   color: white;

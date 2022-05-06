@@ -12,6 +12,7 @@ module.exports = {
     showAll,
     showSearch,
     showOne,
+    favorite,
     showA,
     showB,
     showC,
@@ -84,6 +85,30 @@ function showOne(req, res) {
                 .then(cocktailData => {
                     res.render('cocktails/details', { cocktailData, searchResults });
                 })
+        });
+};
+
+function favorite(req, res) {
+    let newFavorite = {};
+    fetch(`${rootURL}${token}/lookup.php?i=${req.params.id}`)
+        .then(res => res.json())
+        .then(cocktailData => {
+            newFavorite.idDrink = cocktailData.drinks[0].idDrink;
+            newFavorite.strDrink = cocktailData.drinks[0].strDrink;
+            newFavorite.strIngredient1 = cocktailData.drinks[0].strIngredient1;
+            newFavorite.strGlass = cocktailData.drinks[0].strGlass;
+            newFavorite.strDrinkThumb = cocktailData.drinks[0].strDrinkThumb;
+            newFavorite.strAlcoholic = cocktailData.drinks[0].strAlcoholic;
+            newFavorite.strCategory = cocktailData.drinks[0].strCategory;
+        })
+        .then(function () {
+            User.findById(req.user._id, function (err, user) {
+                user.favorites.push(newFavorite);
+                user.favoriteIds.push(newFavorite.idDrink);
+                user.save(function (err) {
+                    res.redirect(`/cocktails/${req.params.id}`);
+                });
+            });
         });
 };
 

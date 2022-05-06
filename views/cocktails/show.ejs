@@ -15,7 +15,9 @@
 <body class="showpage">
     <div class="sidenav">
         <% if (user) { %>
-            <a href="/logout">Log out</a>
+            <a href="/logout"><img class="loginpicshowpage" style="background-color:white;border-radius:50%"
+                    src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log out</a>
+            <a href="/favorites">Favorites</a>
             <% } else { %>
                 <a href="/auth/google"><img class="loginpicshowpage"
                         src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log

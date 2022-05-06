@@ -20,7 +20,8 @@
             <a href="/favorites">Favorites</a>
             <% } else { %>
                 <a href="/auth/google"><img class="loginpicshowpage"
-                        src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log In</a>
+                        src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log
+                    In</a>
                 <% } %>
                     <a href="/">Home</a>
     </div>
@@ -54,24 +55,26 @@
         <a href="/cocktails/search/z">Z</a>
         <p> ~ </p>
     </div>
-    <p class="showheader">Cocktails that include <%= searchData %>:
-    </p>
-    <hr>
-    <% if (cocktailData.drinks !==null) { %>
-        <% cocktailData.drinks.forEach(function (ele, idx) { %>
+    <% if (favoritesInfo.favorites.length) { %>
+        <% favoritesInfo.favorites.forEach(function (ele, idx) { %>
             <div class="showcontainer">
-                <img class="thumbnail" src="<%= cocktailData.drinks[idx].strDrinkThumb %>">
-
+                <img class="thumbnail" src="<%= favoritesInfo.favorites[idx].strDrinkThumb %>">
                 <h3 class="gridtitle">
-                    <a href="/cocktails/<%=cocktailData.drinks[idx].idDrink%>">
-                        <%= cocktailData.drinks[idx].strDrink %>
+                    <a href="/cocktails/<%=favoritesInfo.favorites[idx].idDrink%>">
+                        <%= favoritesInfo.favorites[idx].strDrink %>
                     </a>
                 </h3>
+                <p class="griddescription" style="color: white">
+                    <%= favoritesInfo.favorites[idx].strAlcoholic %>
+                        <%= favoritesInfo.favorites[idx].strCategory.toLowerCase() %>
+                            featuring <%= favoritesInfo.favorites[idx].strIngredient1 %>, best enjoyed in a <%=
+                                    favoritesInfo.favorites[idx].strGlass %>.
+                </p>
+
             </div>
             <% }); %>
                 <% } else { %>
-                    <p class="errorsearch">We can't find anything that includes <%= searchData %>, old chap.</p>
-                    <a href="/">Search Again</a>
+                    <p class="errorsearch">You haven't added any favorites yet, my friend.</p>
                     <% }; %>
 </body>
 
