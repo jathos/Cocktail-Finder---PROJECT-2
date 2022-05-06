@@ -208,14 +208,51 @@ select {
 .detailstitle {
   display: flex;
   justify-content: center;
+  font-family: 'Playfair Display', serif;
 }
 
 .detailtitle {
   text-align: center;
   color: white;
+  font-family: 'Playfair Display', serif;
 }
 
 .detailsubtitle {
   margin-left: 225px;
   color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+table {
+  margin-left: 225px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+.marginleft {
+  margin-left: 225px;
+  font-family: 'Playfair Display', serif;
+}
+
+.disabledbutton {
+  height: 30px;
+  width: 200px;
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color: #54273e;
+  color: white;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.activebutton {
+  height: 30px;
+  width: 125px;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: black;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
 }

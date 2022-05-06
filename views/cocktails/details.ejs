@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <title>Find a Cocktail</title>
 </head>
 
@@ -20,6 +23,7 @@
                         src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log In</a>
                 <% } %>
                     <a href="/">Home</a>
+                    <a href="/cocktails">Browse by Letter</a>
     </div>
     <img class="detailspic" src="<%= cocktailData.drinks[0].strDrinkThumb %>">
     <div class="detailstitle">
@@ -27,10 +31,10 @@
             <%= cocktailData.drinks[0].strDrink %>
         </h1>
         <% if (user && user.favoriteIds.includes(cocktailData.drinks[0].idDrink)) { %>
-            <button type="button" disabled>Add to Favorites</button>
+            <button class="disabledbutton" type="button" disabled>Already added to Favorites</button>
             <% } else if (user) {%>
                 <form action="/cocktails/<%= cocktailData.drinks[0].idDrink %>" method="POST">
-                    <button type="submit">Add to Favorites</button>
+                    <button class="activebutton" type="submit">Add to Favorites</button>
                 </form>
                 <% } %>
     </div>
@@ -76,7 +80,7 @@
             <%= cocktailData.drinks[0].strInstructions %>
         </p>
     </section>
-    <h4 class="detailsubtitle">Comments</h4>
+    <h2 class="detailsubtitle">Comments</h2>
     <hr>
     <% if (user) { %>
         <% if (searchResults.length) { %>
@@ -113,16 +117,16 @@
                 </tbody>
             </table>
             <% } else { %>
-                <p>No comments posted yet</p>
+                <p class="detailsubtitle">No comments posted yet</p>
                 <% } %>
-                    <h5>Post a new comment:</h5>
+                    <h5 class="detailsubtitle">Post a new comment:</h5>
                     <form action="/comments/<%= cocktailData.drinks[0].idDrink %>" method="POST">
-                        <textarea name="text"></textarea>
+                        <textarea class="marginleft" name="text"></textarea>
                         <input type="submit" value="Post">
                     </form>
                     <% } else { %>
                         <div>
-                            <p></p><a href="/auth/google">Log in</a> to post a comment.</p>
+                            <p class="detailsubtitle"><a href="/auth/google">Log in</a> to post a comment.</p>
                         </div>
                         <% } %>
 </body>
