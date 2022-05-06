@@ -270,3 +270,8 @@ table {
   height: 50px;
   width: 50px;
 }
+
+.textarea {
+  width: 20vw;
+  height: 20vh;
+}

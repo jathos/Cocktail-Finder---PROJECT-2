@@ -3,7 +3,9 @@ const Comment = require('../models/comment');
 
 module.exports = {
     create,
-    deleteComment
+    deleteComment,
+    editPage,
+    editComment
 };
 
 function create(req, res) {
@@ -28,5 +30,25 @@ function deleteComment(req, res, next) {
                 }).catch(function (err) {
                     return next(err);
                 });
+        });
+};
+
+function editPage(req, res) {
+    Comment.findById(req.params.id)
+        .then(doc => {
+            res.render('comments/edit', { doc });
+        });
+};
+
+function editComment(req, res) {
+    let redirectId
+    Comment.findById(req.params.id)
+        .then(doc => {
+            if (!doc.user.equals(req.user._id)) return res.redirect('/')
+            redirectId = doc.cocktailId;
+            doc.text = req.body.text;
+            doc.save(function (err) {
+                res.redirect(`/cocktails/${redirectId}`);
+            });
         });
 };
