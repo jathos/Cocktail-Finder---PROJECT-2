@@ -113,6 +113,20 @@ select {
   position: relative;
   left: 18px;
   opacity: .5;
+  border-radius: 50%;
+  transition: background-color 1s;
+}
+
+.loginlink {
+  transition: color 1s;
+}
+
+.loginlink:hover {
+  color: rgb(147, 224, 248);
+}
+
+.loginlink:hover>.loginpic {
+  background-color: rgb(147, 224, 248);
 }
 
 .loginpicshowpage {
