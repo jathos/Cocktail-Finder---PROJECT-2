@@ -41,6 +41,33 @@
   </form>
   <a class="browselink" href="/cocktails">Browse By Letter</a>
   </div>
+  <div id="credits">
+    <p id="creditslink">Credits</p>
+    <div id="creditsdetails">
+      <p>Cocktail Finder is made possible by The CocktailDB, an open, crowd-sourced database of drinks and cocktails
+        from around the world.</p>
+      <p>Please visit them <span><a href="https://www.thecocktaildb.com/">HERE</a></span>.</p>
+    </div>
+  </div>
+  <script>
+    let counter = 0;
+    const creditsLink = document.getElementById('creditslink');
+    const creditsContainer = document.getElementById('credits');
+    const creditsDetails = document.getElementById('creditsdetails')
+    creditsLink.addEventListener('click', function () {
+      if (counter == 0) {
+        creditsContainer.style.height = '200px';
+        creditsContainer.style.width = '400px';
+        creditsDetails.style.display = 'block';
+        counter = 1;
+      } else {
+        creditsContainer.style.height = '50px';
+        creditsContainer.style.width = '150px';
+        creditsDetails.style.display = 'none';
+        counter = 0;
+      };
+    });
+  </script>
 </body>
 
 </html>

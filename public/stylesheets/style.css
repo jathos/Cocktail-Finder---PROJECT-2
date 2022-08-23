@@ -289,3 +289,33 @@ table {
   width: 20vw;
   height: 20vh;
 }
+
+#credits {
+  background-color: #54273e;
+  opacity: .6;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* transition: height 1s, width 1s; */
+  padding: 15px;
+}
+
+/* .credits:hover {
+  height: 200px;
+  width: 400px;
+} */
+
+#creditslink {
+  text-decoration: underline;
+}
+
+#creditsdetails {
+  display: none;
+}
