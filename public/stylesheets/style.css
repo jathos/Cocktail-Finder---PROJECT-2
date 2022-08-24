@@ -39,6 +39,9 @@ body {
   border-right-style: solid;
   border-right-color: white;
   border-right-width: 1px;
+  transition: width 1s;
+  transition-timing-function: linear;
+  overflow-x: hidden;
 }
 
 .sidenav a {
@@ -48,6 +51,7 @@ body {
   color: lightslategray;
   font-family: 'Playfair Display', serif;
   transition: color 1s;
+  width: fit-content;
 }
 
 .sidenav a:hover {
@@ -56,6 +60,17 @@ body {
 
 .sidenav a:hover>.loginpicshowpage {
   background-color: white;
+}
+
+#sidenavclose {
+  padding: 2px;
+  margin-left: 85%;
+  margin-right: 5%;
+  cursor: pointer;
+  border: solid;
+  border-width: 1px;
+  transition: margin-left 1s;
+  transition-timing-function: linear;
 }
 
 a,

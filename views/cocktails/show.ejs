@@ -13,7 +13,8 @@
 </head>
 
 <body class="showpage">
-    <div class="sidenav">
+    <div class="sidenav" id="sidenav">
+        <a id="sidenavclose">X</a>
         <% if (user) { %>
             <a href="/logout"><img class="loginpicshowpage" style="background-color:white;border-radius:50%"
                     src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log out</a>
@@ -79,6 +80,23 @@
                     <p class="errorsearch">We can't find anything named "<%= searchData %>", old chap.</p>
                     <a href="/">Search Again</a>
                     <% }; %>
+
 </body>
+<script>
+    const sideNav = document.getElementById('sidenav');
+    const sideNavClose = document.getElementById('sidenavclose');
+    let counter = 0;
+    sideNavClose.addEventListener('click', function () {
+        if (counter == 0) {
+            sideNav.style.width = '30px';
+            sideNavClose.style.marginLeft = '0';
+            counter += 1;
+        } else {
+            sideNav.style.width = '250px';
+            sideNavClose.style.marginLeft = '85%';
+            counter -= 1;
+        }
+    })
+</script>
 
 </html>
