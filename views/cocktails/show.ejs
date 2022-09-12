@@ -14,7 +14,7 @@
 
 <body class="showpage">
     <div class="sidenav" id="sidenav">
-        <a id="sidenavclose">X</a>
+        <a id="sidenavclose"></a>
         <% if (user) { %>
             <a href="/logout"><img class="loginpicshowpage" style="background-color:white;border-radius:50%"
                     src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log out</a>
@@ -89,11 +89,9 @@
     sideNavClose.addEventListener('click', function () {
         if (counter == 0) {
             sideNav.style.width = '30px';
-            sideNavClose.style.marginLeft = '0';
             counter += 1;
         } else {
             sideNav.style.width = '250px';
-            sideNavClose.style.marginLeft = '85%';
             counter -= 1;
         }
     })

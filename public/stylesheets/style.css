@@ -40,7 +40,6 @@ body {
   border-right-color: white;
   border-right-width: 1px;
   transition: width 1s;
-  transition-timing-function: linear;
   overflow-x: hidden;
 }
 
@@ -52,6 +51,7 @@ body {
   font-family: 'Playfair Display', serif;
   transition: color 1s;
   width: fit-content;
+  margin-left: 15px;
 }
 
 .sidenav a:hover {
@@ -63,14 +63,13 @@ body {
 }
 
 #sidenavclose {
-  padding: 2px;
-  margin-left: 85%;
-  margin-right: 5%;
+  height: 3vh;
+  width: 20px;
+  background-image: url(../images/hamburger_menu.png);
+  background-size: cover;
   cursor: pointer;
-  border: solid;
-  border-width: 1px;
-  transition: margin-left 1s;
-  transition-timing-function: linear;
+  /* transition: margin-left 1s;
+  transition-timing-function: linear; */
 }
 
 a,
@@ -171,7 +170,6 @@ select {
 }
 
 .showpage {
-  /*background-image: linear-gradient(to right, #1c1b1b, #e8886b, #1c1b1b);*/
   background-color: #1c1b1b;
 }
 
