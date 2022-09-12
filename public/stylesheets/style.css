@@ -54,6 +54,11 @@ body {
   margin-left: 15px;
 }
 
+.sidenavlinks {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 .sidenav a:hover {
   color: white;
 }
