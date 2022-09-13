@@ -54,8 +54,6 @@ body {
   margin-left: 15px;
 }
 
-
-
 .sidenav a:hover {
   color: white;
 }
@@ -70,6 +68,10 @@ body {
   background-image: url(../images/hamburger_menu.png);
   background-size: cover;
   cursor: pointer;
+}
+
+#sidenavclose:active {
+  background-color: rgb(147, 224, 248);
 }
 
 a,
@@ -324,11 +326,6 @@ table {
   transition: height 1s, width 1s;
   padding: 15px;
 }
-
-/* .credits:hover {
-  height: 200px;
-  width: 400px;
-} */
 
 #creditslink {
   text-decoration: underline;
