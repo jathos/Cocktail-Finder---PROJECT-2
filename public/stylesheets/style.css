@@ -10,6 +10,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 1.3vw;
   margin-left: 225px;
+  transition: margin-left 1s;
 }
 
 .showheader {
@@ -26,6 +27,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: 200px;
+  transition: margin-left 1s;
 }
 
 .sidenav {
@@ -41,6 +43,7 @@ body {
   border-right-width: 1px;
   transition: width 1s;
   overflow-x: hidden;
+  margin-right: 5px;
 }
 
 .sidenav a {
@@ -181,7 +184,7 @@ select {
   grid-template-rows: repeat(3, 2.85vw);
   margin: 25px 0px 0px 0px;
   opacity: .7;
-  transition: opacity 1s;
+  transition: opacity 1s, margin-left 1s;
   margin-left: 225px;
 }
 
