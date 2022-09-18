@@ -143,6 +143,7 @@
     const sideNavLinks = document.querySelectorAll('.sidenavlinks');
     const drinkDetails = document.querySelectorAll('.detailsubtitle');
     const commentTable = document.querySelector('table');
+    const commentTextBox = document.querySelector('.marginleft');
     let counter = 0;
     sideNavClose.addEventListener('click', function () {
         if (counter == 0) {
@@ -156,6 +157,9 @@
             if (commentTable != null) {
                 commentTable.style.marginLeft = '55px';
             }
+            if (commentTextBox != null) {
+                commentTextBox.style.marginLeft = '55px';
+            };
             counter += 1;
         } else {
             sideNav.style.width = '250px';
@@ -167,6 +171,9 @@
             };
             if (commentTable != null) {
                 commentTable.style.marginLeft = '225px';
+            };
+            if (commentTextBox != null) {
+                commentTextBox.style.marginLeft = '225px';
             };
             counter -= 1;
         }

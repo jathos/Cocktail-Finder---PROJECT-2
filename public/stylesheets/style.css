@@ -271,6 +271,7 @@ table {
 .marginleft {
   margin-left: 225px;
   font-family: 'Playfair Display', serif;
+  transition: margin-left 1s;
 }
 
 .disabledbutton {

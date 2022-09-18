@@ -14,16 +14,17 @@
 
 <body class="showpage">
     <div class="sidenav" id="sidenav">
-
+        <a id="sidenavclose"></a>
         <% if (user) { %>
-            <a href="/logout"><img class="loginpicshowpage" style="background-color:white;border-radius:50%"
+            <a href="/logout" class="sidenavlinks"><img class="loginpicshowpage"
+                    style="background-color:white;border-radius:50%"
                     src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log out</a>
-            <a href="/favorites">Favorites</a>
+            <a href="/favorites" class="sidenavlinks">Favorites</a>
             <% } else { %>
-                <a href="/auth/google"><img class="loginpicshowpage"
+                <a href="/auth/google" class="sidenavlinks"><img class="loginpicshowpage"
                         src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log In</a>
                 <% } %>
-                    <a href="/">Home</a>
+                    <a href="/" class="sidenavlinks">Home</a>
     </div>
     <div class="letternav">
         <p> ~ </p>
@@ -75,5 +76,40 @@
                     <a href="/">Search Again</a>
                     <% }; %>
 </body>
+
+<script>
+    const sideNav = document.getElementById('sidenav');
+    const sideNavClose = document.getElementById('sidenavclose');
+    const sideNavLinks = document.querySelectorAll('.sidenavlinks');
+    const letterNav = document.querySelector('.letternav');
+    const showHeader = document.querySelector('.showheader');
+    const drinkDiv = document.querySelectorAll('.showcontainer');
+    let counter = 0;
+    sideNavClose.addEventListener('click', function () {
+        if (counter == 0) {
+            sideNav.style.width = '80px';
+            letterNav.style.marginLeft = '55px';
+            showHeader.style.marginLeft = '30px';
+            for (let item of sideNavLinks) {
+                item.style.opacity = '0';
+            };
+            for (let drink of drinkDiv) {
+                drink.style.marginLeft = '55px';
+            };
+            counter += 1;
+        } else {
+            sideNav.style.width = '250px';
+            letterNav.style.marginLeft = '225px';
+            showHeader.style.marginLeft = '200px';
+            for (let item of sideNavLinks) {
+                item.style.opacity = '1';
+            };
+            for (let drink of drinkDiv) {
+                drink.style.marginLeft = '225px';
+            };
+            counter -= 1;
+        }
+    })
+</script>
 
 </html>
