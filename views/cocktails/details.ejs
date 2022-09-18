@@ -153,7 +153,9 @@
             for (let detail of drinkDetails) {
                 detail.style.marginLeft = '55px';
             };
-            commentTable.style.marginLeft = '55px';
+            if (commentTable != null) {
+                commentTable.style.marginLeft = '55px';
+            }
             counter += 1;
         } else {
             sideNav.style.width = '250px';
@@ -163,7 +165,9 @@
             for (let detail of drinkDetails) {
                 detail.style.marginLeft = '225px';
             };
-            commentTable.style.marginLeft = '225px';
+            if (commentTable != null) {
+                commentTable.style.marginLeft = '225px';
+            };
             counter -= 1;
         }
     })
