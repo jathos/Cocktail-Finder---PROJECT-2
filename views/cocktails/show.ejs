@@ -89,26 +89,30 @@
     const sideNavLinks = document.querySelectorAll('.sidenavlinks');
     const letterNav = document.querySelector('.letternav');
     const showHeader = document.querySelector('.showheader');
-    const drinkDiv = document.querySelector('.showcontainer');
+    const drinkDiv = document.querySelectorAll('.showcontainer');
     let counter = 0;
     sideNavClose.addEventListener('click', function () {
         if (counter == 0) {
             sideNav.style.width = '80px';
             letterNav.style.marginLeft = '55px';
             showHeader.style.marginLeft = '30px';
-            drinkDiv.style.marginLeft = '55px';
             for (let item of sideNavLinks) {
                 item.style.opacity = '0';
-            }
+            };
+            for (let drink of drinkDiv) {
+                drink.style.marginLeft = '55px';
+            };
             counter += 1;
         } else {
             sideNav.style.width = '250px';
             letterNav.style.marginLeft = '225px';
             showHeader.style.marginLeft = '200px';
-            drinkDiv.style.marginLeft = '225px';
             for (let item of sideNavLinks) {
                 item.style.opacity = '1';
-            }
+            };
+            for (let drink of drinkDiv) {
+                drink.style.marginLeft = '225px';
+            };
             counter -= 1;
         }
     })
