@@ -258,12 +258,14 @@ select {
   margin-left: 225px;
   color: white;
   font-family: 'Playfair Display', serif;
+  transition: margin-left 1s;
 }
 
 table {
   margin-left: 225px;
   color: white;
   font-family: 'Playfair Display', serif;
+  transition: margin-left 1s;
 }
 
 .marginleft {
