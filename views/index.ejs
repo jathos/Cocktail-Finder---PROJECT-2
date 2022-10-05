@@ -17,14 +17,14 @@
         src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log out</a>
     <% } else { %>
 
-      <a class="loginlink" href="/auth/google"><img class="loginpic"
+      <a class="loginlink loginlinkhomepage" href="/auth/google"><img class="loginpic"
           src="https://cdn-icons-png.flaticon.com/512/149/149995.png"><br>Log
         in</a>
       <% } %>
 </nav>
 
 <body class="homepage">
-  <p class="homepageheading">Find A Cocktail</p>
+  <p class="homepageheading">Find A<br class="br-show-mobile"> Cocktail</p>
   <form style="text-align:center" action=" /cocktails/search" method="GET">
     <input class="searchbar" type="search" name="search" placeholder="Select a criteria below to start your search"
       required>
@@ -32,7 +32,7 @@
     <input id="searchbutton" type="submit" value="Search">
     <br>
     <div class="homepageundersearch">
-      <label style="color:white;font-size:14pt;font-family: 'Playfair Display', serif">Search
+      <label class="homepagelabel" style="color:white;font-size:14pt;font-family: 'Playfair Display', serif">Search
         critera:</label>
       <select id="selectbox" name="criteria" required>
         <option value="">-</option>
@@ -59,7 +59,7 @@
     creditsLink.addEventListener('click', function () {
       if (counter == 0) {
         creditsContainer.style.height = '200px';
-        creditsContainer.style.width = '400px';
+        creditsContainer.style.width = (window.matchMedia('(max-width: 321px)').matches) ? '85%' : '400px';
         creditsDetails.style.display = 'block';
         counter = 1;
       } else {
