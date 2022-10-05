@@ -412,4 +412,20 @@ table {
   .br-hide-mobile {
     display: none;
   }
+
+  .homepageheading {
+    font-size: 20pt;
+  }
+
+  .searchbar {
+    width: 90%;
+    font-size: 10pt;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 321px) {
+  .br-show-mobile {
+    display: none;
+  }
 }
