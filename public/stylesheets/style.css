@@ -86,6 +86,7 @@ p {
   background-image: url(../images/pexels-alem-sánchez-613037-min.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  /* height: 100vh; */
 }
 
 .searchbar {
@@ -453,8 +454,44 @@ table {
 
 }
 
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 982px) {
   .br-show-mobile {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 322px) and (max-width: 1385px) {
+  html {
+    height: 100vh;
+  }
+}
+
+@media only screen and (min-width: 322px) and (max-width: 981px) {
+  .homepageheading {
+    margin: 40px 0px 25px 0px;
+    font-size: 50pt;
+  }
+
+  .searchbar {
+    height: 60px;
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
+  #searchbutton {
+    width: 40%;
+  }
+
+  .homepageundersearch {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .browselink {
+    font-size: 14pt;
+  }
+
+  #selectbox {
+    margin-top: 0px;
   }
 }
