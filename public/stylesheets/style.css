@@ -565,7 +565,8 @@ table {
 
   #sidenavclose {
     height: 40px;
-    width: 30px;
+    width: 25px;
+    margin-left: 0px;
   }
 
   .letternav {

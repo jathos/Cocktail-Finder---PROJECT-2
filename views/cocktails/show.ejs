@@ -94,25 +94,25 @@
     let counter = 0;
     sideNavClose.addEventListener('click', function () {
         if (counter == 0) {
-            sideNav.style.width = '80px';
-            letterNav.style.marginLeft = '55px';
-            showHeader.style.marginLeft = '30px';
+            sideNav.style.width = (window.matchMedia('(max-width:999px)').matches) ? '5%' : '80px';
+            letterNav.style.marginLeft = (window.matchMedia('(max-width:999px)').matches) ? '5%' : '55px';
+            showHeader.style.marginLeft = (window.matchMedia('(max-width:999px)').matches) ? '5%' : '30px';
             for (let item of sideNavLinks) {
                 item.style.opacity = '0';
             };
             for (let drink of drinkDiv) {
-                drink.style.marginLeft = '55px';
+                drink.style.marginLeft = (window.matchMedia('(max-width:999px)').matches) ? '5%' : '55px';
             };
             counter += 1;
         } else {
-            sideNav.style.width = '250px';
-            letterNav.style.marginLeft = '225px';
-            showHeader.style.marginLeft = '200px';
+            sideNav.style.width = (window.matchMedia('(max-width:999px)').matches) ? '15%' : '250px';
+            letterNav.style.marginLeft = (window.matchMedia('(max-width:999px)').matches) ? '15%' : '225px';
+            showHeader.style.marginLeft = (window.matchMedia('(max-width:999px)').matches) ? '15%' : '200px';
             for (let item of sideNavLinks) {
                 item.style.opacity = '1';
             };
             for (let drink of drinkDiv) {
-                drink.style.marginLeft = '225px';
+                drink.style.marginLeft = (window.matchMedia('(max-width:999px)').matches) ? '15%' : '225px';
             };
             counter -= 1;
         }
