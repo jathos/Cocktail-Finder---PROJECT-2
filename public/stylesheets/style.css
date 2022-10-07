@@ -406,26 +406,26 @@ table {
 
   .showcontainer {
     margin-left: 0px;
-    height: 9vh;
+    max-height: 12vh;
     grid-template-rows: repeat(3, 1fr);
     padding-bottom: 5px;
-    margin-bottom: 20px;
   }
 
   .thumbnail {
     grid-column: 1/4;
     object-fit: cover;
-    margin-bottom: 5px;
   }
 
   .gridtitle {
     grid-column: 4/12;
     font-size: 16pt;
+    top: -6px;
   }
 
   .griddescription {
     grid-column: 4/12;
     font-size: 9pt;
+    top: -2px;
   }
 
   .br-hide-mobile {
