@@ -470,6 +470,15 @@ table {
     margin-right: 18px;
   }
 
+  .detailspic {
+    height: 35vh;
+    width: 96%;
+    margin-top: 75px;
+  }
+
+  .detailsubtitle {
+    margin-left: 5px;
+  }
 }
 
 @media only screen and (min-width: 982px) {
