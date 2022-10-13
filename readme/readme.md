@@ -1,7 +1,7 @@
 # Cocktail Finder by J.B.
 Had a long week?  Treat yourself to a cool delicious craft cocktail for all of your hard work!  
 
-You don't need to go to an expensive restaurant to get a expertly crafted cocktail anymore.  This app will walk you through all the steps and ingredients you need to create a tasty and memorable happy hour - right in the comfort of your own home.  
+You don't need to go to an expensive restaurant to get an expertly crafted cocktail anymore.  This app will walk you through all the steps and ingredients you need to create a tasty and memorable happy hour - right in the comfort of your own home.  
 
 Found one you really like?  Log in with your [Google](https://google.com) account and add it to your favorites list so the recipe will be easily available on your next visit!
 
