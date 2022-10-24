@@ -522,6 +522,14 @@ table {
 }
 
 @media only screen and (min-width: 322px) and (max-width: 999px) {
+  nav {
+    width: 90%;
+  }
+
+  .homepage {
+    padding: 5px;
+  }
+
   .homepageheading {
     margin: 40px 0px 25px 0px;
     font-size: 50pt;
