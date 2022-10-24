@@ -343,6 +343,14 @@ table {
   display: none;
 }
 
+.detailspage {
+  background-color: black;
+}
+
+.detailstitle {
+  color: white;
+}
+
 @media only screen and (max-width: 321px) {
   #sidenav {
     position: absolute;
@@ -350,7 +358,7 @@ table {
     height: 50px;
     width: 100%;
     margin-bottom: 20px;
-    /* padding: 20px 20px 0px 20px; */
+    /* padding: 0px; */
   }
 
   #sidenavclose {
@@ -472,12 +480,26 @@ table {
 
   .detailspic {
     height: 35vh;
-    width: 96%;
+    max-width: 96%;
     margin-top: 75px;
   }
 
   .detailsubtitle {
     margin-left: 5px;
+  }
+
+  table {
+    margin-left: 5px;
+  }
+
+  .detailspage {
+    background-color: black;
+    /* padding: 0px;
+    margin: 0px; */
+  }
+
+  .detailstitle {
+    color: white;
   }
 }
 
@@ -587,5 +609,46 @@ table {
 
   .tilde {
     margin: 0px;
+  }
+
+  .detailsubtitle {
+    margin-left: 20%;
+  }
+
+  .detailtitle {
+    margin-left: 20%;
+    margin-right: auto;
+    padding-right: 5px;
+  }
+
+  .detailstitle {
+    color: white;
+    margin-left: 15%;
+  }
+
+  .detailspic {
+    height: 50vw;
+    margin: 30px auto 0px 30%;
+  }
+
+  .detailspage {
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1400px) {
+  .detailspic {
+    height: 50vw;
+    margin: 30px auto 0px 30%;
+  }
+
+  .detailstitle {
+    margin-left: 20%;
+  }
+
+  .detailtitle {
+    margin-left: 20%;
   }
 }
