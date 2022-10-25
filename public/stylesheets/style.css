@@ -660,3 +660,35 @@ table {
     margin-left: 20%;
   }
 }
+
+@media only screen and (max-height: 400px) {
+  .homepageheading {
+    margin-top: 0px;
+    text-align: left;
+    width: 75%;
+    font-size: 50pt;
+    position: relative;
+    bottom: 22vh;
+    margin-left: 15px;
+  }
+
+  .br-show-mobile {
+    display: none;
+  }
+
+  form {
+    width: 90%;
+    position: relative;
+    bottom: 20vh;
+  }
+
+  #searchbutton {
+    width: 15%;
+    margin-left: 5px;
+  }
+
+  .homepageundersearch {
+    justify-content: flex-start;
+    width: 90%;
+  }
+}
