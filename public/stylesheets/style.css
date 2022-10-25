@@ -501,6 +501,11 @@ table {
   .detailstitle {
     color: white;
   }
+
+  #credits {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 @media only screen and (min-width: 982px) {
@@ -648,6 +653,11 @@ table {
   table {
     margin-left: 20%;
   }
+
+  #credits {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1400px) {
@@ -694,5 +704,10 @@ table {
   .homepageundersearch {
     justify-content: flex-start;
     width: 90%;
+  }
+
+  #credits {
+    position: fixed;
+    bottom: 0;
   }
 }
